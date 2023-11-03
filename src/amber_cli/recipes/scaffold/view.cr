@@ -2,12 +2,12 @@ require "../../generators/field.cr"
 
 module Amber::Recipes::Scaffold
   class View < Teeplate::FileTree
-    include Amber::CLI::Helpers
+    include AmberCli::Helpers
     include FileEntries
 
     @name : String
-    @fields : Array(Amber::CLI::Field)
-    @visible_fields : Array(Amber::CLI::Field)
+    @fields : Array(AmberCli::Field)
+    @visible_fields : Array(AmberCli::Field)
     @language : String = CLI.config.language
     @database : String = CLI.config.database
     @model : String = CLI.config.model
@@ -16,9 +16,9 @@ module Amber::Recipes::Scaffold
     @recipe : String
 
     def initialize(@name, @recipe, fields)
-      @fields = fields.map { |field| Amber::CLI::Field.new(field, database: @database) }
+      @fields = fields.map { |field| AmberCli::Field.new(field, database: @database) }
       @fields += %w(created_at:time updated_at:time).map do |f|
-        Amber::CLI::Field.new(f, hidden: true, database: @database)
+        AmberCli::Field.new(f, hidden: true, database: @database)
       end
 
       @visible_fields = @fields.reject(&.hidden)

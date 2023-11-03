@@ -5,7 +5,7 @@ require "./config"
 require "./commands/command"
 require "./commands/*"
 
-module Amber::CLI
+module AmberCli
   include Amber::Environment
   AMBER_YML = ".amber.yml"
 

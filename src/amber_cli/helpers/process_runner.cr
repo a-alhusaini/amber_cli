@@ -121,7 +121,7 @@ module Sentry
           else
             log :run, "Building..."
             time = Time.monotonic
-            build_result = Amber::CLI::Helpers.run(build_command_run)
+            build_result = AmberCli::Helpers.run(build_command_run)
             exit 1 unless build_result.is_a? Process::Status
             if build_result.success?
               log :run, "Compiled in #{(Time.monotonic - time)}"
@@ -147,7 +147,7 @@ module Sentry
     end
 
     private def start_process(run_command_run)
-      process = Amber::CLI::Helpers.run(run_command_run, wait: false, shell: false)
+      process = AmberCli::Helpers.run(run_command_run, wait: false, shell: false)
       if process.is_a? Process
         @processes["run"] ||= Array(Process).new
         @processes["run"] << process
@@ -165,11 +165,11 @@ module Sentry
 
         if (build_command = @build_commands[task]?) && !skip_build
           log task, "Building..."
-          build_result = Amber::CLI::Helpers.run(build_command)
+          build_result = AmberCli::Helpers.run(build_command)
           next unless build_result.is_a? Process::Status
 
           if build_result.success?
-            Amber::CLI::Helpers.run(build_command)
+            AmberCli::Helpers.run(build_command)
           else
             log task, "Build step failed."
             next # don't continue to run command step
@@ -177,7 +177,7 @@ module Sentry
         end
 
         log task, "Starting..."
-        process = Amber::CLI::Helpers.run(run_command, wait: false, shell: true)
+        process = AmberCli::Helpers.run(run_command, wait: false, shell: true)
         if process.is_a? Process
           @processes[task] ||= Array(Process).new
           @processes[task] << process

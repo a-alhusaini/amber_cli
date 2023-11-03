@@ -1,6 +1,6 @@
 require "./generator"
 
-module Amber::CLI
+module AmberCli
   class WebSocketChannel < Generator
     command :channel
     directory "#{__DIR__}/../templates/channel"

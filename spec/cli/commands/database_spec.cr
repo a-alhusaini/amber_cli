@@ -5,7 +5,7 @@ require "../../support/fixtures/cli_fixtures"
 include CLIHelper
 include CLIFixtures
 
-module Amber::CLI
+module AmberCli
   describe "database" do
     describe "sqlite" do
       it "has connection settings in config/environments/env.yml" do

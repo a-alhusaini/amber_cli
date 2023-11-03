@@ -57,7 +57,7 @@ module Amber::Recipes
       app.render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
       unless options.no_deps?
         info "Installing Dependencies"
-        Amber::CLI::Helpers.run("cd #{name} && shards update")
+        AmberCli::Helpers.run("cd #{name} && shards update")
       end
     end
 
@@ -68,11 +68,11 @@ module Amber::Recipes
         Controller.new(name, @recipe, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
       when "model"
         info "Rendering Model #{name} from #{@recipe}"
-        Amber::CLI::Migration.new(name, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
+        AmberCli::Migration.new(name, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
         Model.new(name, @recipe, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
       when "scaffold"
         info "Rendering Scaffold #{name} from #{@recipe}"
-        Amber::CLI::Migration.new(name, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
+        AmberCli::Migration.new(name, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
         Model.new(name, @recipe, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
         Scaffold::Controller.new(name, @recipe, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)
         Scaffold::View.new(name, @recipe, @fields).render(directory, list: true, interactive: !options.assume_yes?, color: options.no_color?)

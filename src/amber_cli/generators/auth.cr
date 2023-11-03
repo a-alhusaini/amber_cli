@@ -1,7 +1,7 @@
 require "./generator"
 require "./field"
 
-module Amber::CLI
+module AmberCli
   class Auth < Generator
     command :auth
     directory "#{__DIR__}/../templates/auth"

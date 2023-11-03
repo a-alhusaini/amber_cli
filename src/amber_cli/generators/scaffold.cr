@@ -1,4 +1,4 @@
-module Amber::CLI
+module AmberCli
   class Scaffold < Generator
     command :scaffold
     property model : Generator

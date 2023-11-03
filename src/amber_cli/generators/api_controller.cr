@@ -1,5 +1,5 @@
-module Amber::CLI
-  class ApiController < Amber::CLI::Generator
+module AmberCli
+  class ApiController < AmberCli::Generator
     directory "#{__DIR__}/../templates/api/controller"
 
     def initialize(name, fields)

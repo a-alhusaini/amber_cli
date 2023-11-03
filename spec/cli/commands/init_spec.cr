@@ -3,12 +3,12 @@ require "../../support/helpers/cli_helper"
 
 include CLIHelper
 
-module Amber::CLI
+module AmberCli
   def self.set_dir
     Dir.cd CURRENT_DIR
   end
 
-  describe Amber::CLI::MainCommand::New do
+  describe AmberCli::MainCommand::New do
     Spec.after_each do
       cleanup
     end

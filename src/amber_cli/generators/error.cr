@@ -1,4 +1,4 @@
-module Amber::CLI
+module AmberCli
   class ErrorTemplate < Generator
     command :error
     directory "#{__DIR__}/../templates/error"

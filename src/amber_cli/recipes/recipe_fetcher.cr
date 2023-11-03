@@ -84,7 +84,7 @@ module Amber::Recipes
       create_recipe_shard shard_name
 
       Log.info { "Installing Recipe".colorize(:light_cyan) }
-      Amber::CLI::Helpers.run("cd #{app_dir}/.recipes && shards update")
+      AmberCli::Helpers.run("cd #{app_dir}/.recipes && shards update")
     end
 
     def recipe_source

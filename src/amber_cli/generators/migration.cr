@@ -1,4 +1,4 @@
-module Amber::CLI
+module AmberCli
   class Migration < Generator
     directory "#{__DIR__}/../templates/migration/full"
 

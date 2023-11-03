@@ -1,7 +1,7 @@
 require "../../spec_helper"
 require "./migration_spec_helper"
 
-module Amber::CLI
+module AmberCli
   describe Migration do
     describe "#render" do
       context "when rendering a migration with an index for belongs_to" do

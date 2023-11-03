@@ -3,7 +3,7 @@ require "../../support/helpers/cli_helper"
 
 include CLIHelper
 
-module Amber::CLI
+module AmberCli
   describe "amber exec" do
     context "within project" do
       Spec.before_suite do

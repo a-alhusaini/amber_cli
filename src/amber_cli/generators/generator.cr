@@ -1,12 +1,12 @@
 require "../helpers/migration"
 require "./field.cr"
 
-module Amber::CLI
+module AmberCli
   abstract class Generator < Teeplate::FileTree
-    class_getter registered_commands = Hash(String, Amber::CLI::Generator.class).new
+    class_getter registered_commands = Hash(String, AmberCli::Generator.class).new
 
     macro command(name)
-      Amber::CLI::Generator.registered_commands[{{name.id.stringify}}] = {{ @type.id }}
+      AmberCli::Generator.registered_commands[{{name.id.stringify}}] = {{ @type.id }}
     end
 
     include Helpers::Migration
@@ -15,7 +15,7 @@ module Amber::CLI
     property name : String
     property fields : Array(Field)
     property fields_hash : Hash(String, String)
-    property config : Amber::CLI::Config
+    property config : AmberCli::Config
     property table_name : String?
     property timestamp : String
 

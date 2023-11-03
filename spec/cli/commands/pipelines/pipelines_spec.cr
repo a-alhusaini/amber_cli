@@ -6,7 +6,7 @@ require "cli/spec"
 include CLIHelper
 include Cli::Spec::Helper
 
-module Amber::CLI
+module AmberCli
   extend Helpers
 
   describe "amber pipelines" do

@@ -1,6 +1,6 @@
 require "./generator"
 
-module Amber::CLI
+module AmberCli
   class App < Teeplate::FileTree
     directory "#{__DIR__}/../templates/app"
     getter database_name

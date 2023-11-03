@@ -1,6 +1,6 @@
 require "./model"
 
-module Amber::CLI
+module AmberCli
   class Model < Generator
     command :model
     directory "#{__DIR__}/../templates/model"
@@ -9,7 +9,7 @@ module Amber::CLI
 
     def initialize(name, fields)
       super(name, fields)
-      @migration = Amber::CLI::Migration.new(name, fields)
+      @migration = AmberCli::Migration.new(name, fields)
       add_timestamp_fields
     end
 

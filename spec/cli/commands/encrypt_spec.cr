@@ -4,7 +4,7 @@ require "../../../src/support/file_encryptor"
 
 include CLIHelper
 
-module Amber::CLI
+module AmberCli
   describe "amber encrypt" do
     it "creates a hidden .test.enc file" do
       scaffold_app(TESTING_APP)

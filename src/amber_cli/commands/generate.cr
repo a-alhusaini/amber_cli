@@ -1,6 +1,6 @@
 require "../generators"
 
-module Amber::CLI
+module AmberCli
   class_property color = true
 
   class MainCommand < ::Cli::Supercommand

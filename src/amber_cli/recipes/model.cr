@@ -2,11 +2,11 @@ require "../generators/field.cr"
 
 module Amber::Recipes
   class Model < Teeplate::FileTree
-    include Amber::CLI::Helpers
+    include AmberCli::Helpers
     include FileEntries
 
     @name : String
-    @fields : Array(Amber::CLI::Field)
+    @fields : Array(AmberCli::Field)
     @model : String = CLI.config.model
     @database : String = CLI.config.database
 
@@ -15,9 +15,9 @@ module Amber::Recipes
     @table_name : String?
 
     def initialize(@name, @recipe, fields)
-      @fields = fields.map { |field| Amber::CLI::Field.new(field, database: @database) }
+      @fields = fields.map { |field| AmberCli::Field.new(field, database: @database) }
       @fields += %w(created_at:time updated_at:time).map do |f|
-        Amber::CLI::Field.new(f, hidden: true, database: @database)
+        AmberCli::Field.new(f, hidden: true, database: @database)
       end
 
       @template = RecipeFetcher.new("model", @recipe).fetch

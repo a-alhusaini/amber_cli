@@ -5,7 +5,7 @@ require "../../support/fixtures/cli_fixtures"
 include CLIHelper
 include CLIFixtures
 
-module Amber::CLI
+module AmberCli
   describe "amber generate" do
     ENV["AMBER_ENV"] = "test"
     camel_case = "PostComment"

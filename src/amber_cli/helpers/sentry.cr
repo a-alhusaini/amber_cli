@@ -8,13 +8,13 @@ module Sentry
 
     class Options
       def self.defaults
-        name = Amber::CLI::Config.get_name
+        name = AmberCli::Config.get_name
         {
           name:         name,
           process_name: "./bin/#{name}",
-          build:        join_commands(Amber::CLI.config.watch["run"]["build_commands"]),
-          run:          join_commands(Amber::CLI.config.watch["run"]["run_commands"]),
-          watch:        Amber::CLI.config.watch["run"]["include"],
+          build:        join_commands(AmberCli.config.watch["run"]["build_commands"]),
+          run:          join_commands(AmberCli.config.watch["run"]["run_commands"]),
+          watch:        AmberCli.config.watch["run"]["include"],
         }
       end
 
@@ -62,7 +62,7 @@ module Sentry
       run_commands = Hash(String, String).new
       includes = Hash(String, Array(String)).new
       excludes = Hash(String, Array(String)).new
-      Amber::CLI.config.watch.each do |task, opts|
+      AmberCli.config.watch.each do |task, opts|
         build_commands[task] = Options.join_commands(opts["build_commands"]) if opts.has_key?("build_commands")
         run_commands[task] = Options.join_commands(opts["run_commands"]) if opts.has_key?("run_commands")
         includes[task] = opts["include"] if opts.has_key?("include")

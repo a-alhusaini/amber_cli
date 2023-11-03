@@ -1,6 +1,6 @@
 module Amber::Plugins
   class Installer < Teeplate::FileTree
-    include Amber::CLI::Helpers
+    include AmberCli::Helpers
     include Amber::Recipes::FileEntries
 
     property template : String?
