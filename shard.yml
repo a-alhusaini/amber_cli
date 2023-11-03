@@ -37,8 +37,8 @@ dependencies:
 
   # Currently only used in the CLI tool
   liquid:
-    github: amberframework/liquid.cr
-    branch: master # Shouldn't be left on Master, but good enough for now to use Hugo's best work :)
+    github: dare892/liquid.cr
+    branch: chore/bump-version-crystal1.0.0
 
   # Only used in the CLI tool, original appears to have been abandoned. Lucky one is maintained, mostly?
   shell-table:
@@ -76,4 +76,4 @@ dependencies:
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
-    version: ~> 1.3.0
+    version: ~> 1.5.0
