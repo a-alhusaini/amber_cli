@@ -1,7 +1,7 @@
 require "./environment/**"
 require "./support/file_encryptor"
 
-module Amber::Environment
+module AmberCli::Environment
   alias EnvType = String | Symbol
 
   macro included

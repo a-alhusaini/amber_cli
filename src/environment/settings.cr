@@ -1,7 +1,7 @@
 require "yaml"
 require "yaml_mapping"
 
-module Amber::Environment
+module AmberCli::Environment
   class Settings
     alias SettingValue = String | Int32 | Bool | Nil
 

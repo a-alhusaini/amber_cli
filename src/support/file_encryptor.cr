@@ -1,6 +1,6 @@
 require "./message_encryptor"
 
-module Amber::Support
+module AmberCli::Support
   ENCRYPT_ENV = "AMBER_ENCRYPTION_KEY"
   FILE_PATH   = "./.encryption_key"
 

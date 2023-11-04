@@ -1,4 +1,4 @@
-module Amber::Environment
+module AmberCli::Environment
   class Loader
     def initialize(@environment : Amber::Environment::EnvType = Amber.env.to_s,
                    @path : String = Amber.environment_path)
