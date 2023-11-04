@@ -21,7 +21,7 @@ module AmberCli
         unencrypted_file = "config/environments/#{env}.yml"
 
         unless File.exists?(unencrypted_file) || File.exists?(encrypted_file)
-          raise Exceptions::Environment.new("./config/environments/", env)
+          raise Amber::Exceptions::Environment.new("./config/environments/", env)
         end
 
         if File.exists?(encrypted_file)

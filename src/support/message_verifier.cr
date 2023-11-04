@@ -21,7 +21,7 @@ module Amber::Support
     end
 
     def verify(signed_message) : String
-      verified(signed_message) || raise(Exceptions::InvalidSignature.new)
+      verified(signed_message) || raise(Amber::ExceptionsInvalidSignature.new)
     end
 
     def verify_raw(signed_message : String) : Bytes
@@ -29,7 +29,7 @@ module Amber::Support
       if valid_message?(data, digest)
         decode(data)
       else
-        raise(Exceptions::InvalidSignature.new)
+        raise(Amber::ExceptionsInvalidSignature.new)
       end
     end
 

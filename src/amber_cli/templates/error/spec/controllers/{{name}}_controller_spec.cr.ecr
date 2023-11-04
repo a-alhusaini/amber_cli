@@ -5,7 +5,7 @@ describe <%= class_name %>Controller do
   request = HTTP::Request.new("get", "/")
   response = HTTP::Server::Response.new(IO::Memory.new)
   context = HTTP::Server::Context.new(request, response)
-  exception = Amber::Exceptions::Base.new
+  exception = Amber::ExceptionsBase.new
   subject = <%= class_name %>Controller.new(context, exception)
 
   describe "#not_found" do
