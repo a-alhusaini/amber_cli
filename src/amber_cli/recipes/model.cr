@@ -7,8 +7,8 @@ module Amber::Recipes
 
     @name : String
     @fields : Array(AmberCli::Field)
-    @model : String = CLI.config.model
-    @database : String = CLI.config.database
+    @model : String = AmberCli.config.model
+    @database : String = AmberCli.config.database
 
     @recipe : String
     @template : String?

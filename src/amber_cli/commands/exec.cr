@@ -66,7 +66,7 @@ module AmberCli
       end
 
       def run
-        CLI.toggle_colors(options.no_color?)
+        AmberCli.toggle_colors(options.no_color?)
         exit_code = 0
         Dir.mkdir("tmp") unless Dir.exists?("tmp")
 

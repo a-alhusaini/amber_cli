@@ -8,9 +8,9 @@ module Amber::Recipes::Scaffold
     @name : String
     @fields : Array(AmberCli::Field)
     @visible_fields : Array(AmberCli::Field)
-    @language : String = CLI.config.language
-    @database : String = CLI.config.database
-    @model : String = CLI.config.model
+    @language : String = AmberCli.config.language
+    @database : String = AmberCli.config.database
+    @model : String = AmberCli.config.model
 
     @template : String | Nil
     @recipe : String

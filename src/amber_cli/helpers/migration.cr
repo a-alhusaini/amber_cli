@@ -20,7 +20,7 @@ module AmberCli::Helpers::Migration
   end
 
   def primary_key
-    case CLI.config.database
+    case AmberCli.config.database
     when "pg"
       "id BIGSERIAL PRIMARY KEY"
     when "mysql"

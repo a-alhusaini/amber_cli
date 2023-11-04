@@ -22,7 +22,7 @@ module AmberCli
       end
 
       def run
-        CLI.toggle_colors(options.no_color?)
+        AmberCli.toggle_colors(options.no_color?)
         if args.name == "."
           name = File.basename(Dir.current)
           full_path_name = Dir.current

@@ -38,7 +38,7 @@ module AmberCli
       end
 
       def run
-        CLI.toggle_colors(options.no_color?)
+        AmberCli.toggle_colors(options.no_color?)
         connect_to_database if args.commands.empty?
 
         process_commands(args.commands)
@@ -140,7 +140,7 @@ module AmberCli
       end
 
       private def database_url
-        ENV["DATABASE_URL"]? || CLI.settings.database_url
+        ENV["DATABASE_URL"]? || AmberCli.settings.database_url
       end
     end
   end

@@ -83,7 +83,7 @@ module Amber::Recipes
     end
 
     def model
-      CLI.config.model
+      AmberCli.config.model
     end
 
     def info(msg)

@@ -57,7 +57,7 @@ module AmberCli
       command_name "pipelines"
 
       def run
-        CLI.toggle_colors(options.no_color?)
+        AmberCli.toggle_colors(options.no_color?)
         parse_routes
         print_pipelines
       rescue ex : BadRoutesException

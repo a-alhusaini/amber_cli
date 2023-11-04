@@ -250,7 +250,7 @@ module AmberCli
     end
 
     def model
-      CLI.config.model
+      AmberCli.config.model
     end
 
     def info(msg)

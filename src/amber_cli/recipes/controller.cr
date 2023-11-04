@@ -3,14 +3,14 @@ require "../generators/field.cr"
 
 module Amber::Recipes
   class Controller < Teeplate::FileTree
-    include Amber::CLI::Helpers
+    include AmberCli::Helpers
     include FileEntries
 
     getter template
 
     @name : String
     @actions = Hash(String, String).new
-    getter language : String = CLI.config.language
+    getter language : String = AmberCli.config.language
     @action_names : Array(String)
 
     @template : String | Nil

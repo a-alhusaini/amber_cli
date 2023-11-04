@@ -19,7 +19,7 @@ module AmberCli
       end
 
       def run
-        CLI.toggle_colors(options.no_color?)
+        AmberCli.toggle_colors(options.no_color?)
         super
       end
     end

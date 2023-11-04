@@ -20,7 +20,7 @@ module AmberCli
     property timestamp : String
 
     def initialize(@name, params)
-      @config = CLI.config
+      @config = AmberCli.config
       @table_name ||= name_plural
       @fields = parse_fields(params)
       @fields_hash = parse_fields_hash

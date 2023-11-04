@@ -17,9 +17,9 @@ module Amber::Recipes::Scaffold
     @recipe : String
 
     def initialize(@name, @recipe, fields)
-      @language = CLI.config.language
-      @database = CLI.config.database
-      @model = CLI.config.model
+      @language = AmberCli.config.language
+      @database = AmberCli.config.database
+      @model = AmberCli.config.model
       @fields = fields.map { |field| AmberCli::Field.new(field, database: @database) }
       @fields += %w(created_at:time updated_at:time).map do |f|
         AmberCli::Field.new(f, hidden: true, database: @database)

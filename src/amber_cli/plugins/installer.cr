@@ -6,7 +6,7 @@ module Amber::Plugins
     property template : String?
 
     property name : String
-    getter language : String = CLI.config.language
+    getter language : String = AmberCli.config.language
     property timestamp : String
     property args : Hash(String, String)
     property settings : Settings?

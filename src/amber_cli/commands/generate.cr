@@ -22,7 +22,7 @@ module AmberCli
       end
 
       def run
-        CLI.toggle_colors(options.no_color?)
+        AmberCli.toggle_colors(options.no_color?)
         ensure_name_argument!
 
         if recipe && Amber::Recipes::Recipe.can_generate?(args.type, recipe)
@@ -34,7 +34,7 @@ module AmberCli
       end
 
       def recipe
-        CLI.config.recipe
+        AmberCli.config.recipe
       end
 
       private def ensure_name_argument!
